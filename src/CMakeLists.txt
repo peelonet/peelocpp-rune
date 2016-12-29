@@ -1,6 +1,7 @@
 ADD_LIBRARY(
   peelocpp_text
   rune.cpp
+  utf8.cpp
 )
 INSTALL(
   DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../include/peelo

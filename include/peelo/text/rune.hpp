@@ -27,6 +27,7 @@
 #define PEELO_TEXT_RUNE_HPP_GUARD
 
 #include <cstdint>
+#include <string>
 #include <iostream>
 
 namespace peelo
@@ -261,6 +262,11 @@ namespace peelo
      * Returns upper case equivalent if character is lower case.
      */
     rune to_upper() const;
+
+    /**
+     * Encodes rune with UTF-8 character encoding and returns result.
+     */
+    std::string utf8() const;
 
     /**
      * Increments rune by one.

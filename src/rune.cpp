@@ -28,6 +28,8 @@
 
 namespace peelo
 {
+  bool utf8_encode(char*, std::size_t&, rune::value_type);
+
   static const rune::value_type max_code_point = 0x10ffff;
 
   const rune rune::min(0);
@@ -268,6 +270,21 @@ namespace peelo
     return rune(to_upper(m_code));
   }
 
+  std::string rune::utf8() const
+  {
+    char buffer[4];
+    std::size_t size;
+
+    if (utf8_encode(buffer, size, m_code))
+    {
+      buffer[size] = 0;
+
+      return buffer;
+    }
+
+    return std::string();
+  }
+
   rune& rune::operator++()
   {
     if (m_code == max_code_point)
@@ -322,7 +339,7 @@ namespace peelo
 
   std::ostream& operator<<(std::ostream& os, const class rune& rune)
   {
-    // TODO
+    os << rune.utf8();
 
     return os;
   }

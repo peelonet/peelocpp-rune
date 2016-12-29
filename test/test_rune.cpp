@@ -25,5 +25,9 @@ int main()
   ++auml;
   assert(auml == peelo::rune::min);
 
+  assert(peelo::rune(0x00e4).utf8() == "\xc3\xa4");
+  assert(peelo::rune(0x00f6).utf8() == "\xc3\xb6");
+  assert(peelo::rune(0x5047).utf8() == "\xe5\x81\x87");
+
   return 0;
 }
