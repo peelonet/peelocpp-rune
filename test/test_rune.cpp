@@ -17,6 +17,22 @@ int main()
   assert(peelo::rune::to_upper(0x00e4) == 0x00c4);
   assert(peelo::rune::to_lower(0x00c4) == 0x00e4);
 
+  assert(peelo::rune::is_alnum('5'));
+  assert(peelo::rune::is_alpha('a'));
+  assert(peelo::rune::is_ascii('s'));
+  assert(peelo::rune::is_blank(' '));
+  assert(peelo::rune::is_cntrl('\t'));
+  assert(peelo::rune::is_digit('9'));
+  assert(peelo::rune::is_graph('a'));
+  assert(peelo::rune::is_lower('a'));
+  assert(peelo::rune::is_number('5'));
+  assert(peelo::rune::is_print(' '));
+  assert(peelo::rune::is_punct('-'));
+  assert(peelo::rune::is_space('\t'));
+  assert(peelo::rune::is_upper('A'));
+  assert(peelo::rune::is_word('a'));
+  assert(peelo::rune::is_xdigit('a'));
+
   auml = peelo::rune::min;
   --auml;
   assert(auml == peelo::rune::max);
