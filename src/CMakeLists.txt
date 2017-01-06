@@ -1,6 +1,7 @@
 ADD_LIBRARY(
   peelocpp_text
   rune.cpp
+  runestring.cpp
   utf8.cpp
 )
 INSTALL(
